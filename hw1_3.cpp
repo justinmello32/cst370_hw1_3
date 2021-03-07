@@ -11,7 +11,6 @@
 
 #include <iostream>
 #include <algorithm>
-#include <cmath>
 #include <string>
 
 
@@ -22,7 +21,7 @@ string decToBinary(int n)
 { 
     // array to store binary number 
     int binaryNum[32];
-    string results;
+    string results = "0";
   
     // counter for binary array 
     int i = 0; 
@@ -45,26 +44,36 @@ int returnLoopsRequired(int n) {
     int result;
     
     switch(n) {
-      case 1 :
-         result = 1;
-         break;
-      case 2 :
-         result = 3;
-         break;
-      case 3 :
-         result = 7;
-         break;
-      case 4:
-         result = 15;
-        break;
-      case 5:
-        result = 31;
-      case 6:
-        result = 63;
-      case 7:
-        result = 127;
-      case 8:
-        result = 255;
+        case 0:
+            result = 0;
+            break;
+        case 1 :
+            result = 1;
+            break;
+        case 2 :
+            result = 3;
+            break;
+        case 3 :
+            result = 7;
+            break;
+        case 4:
+            result = 15;
+            break;
+        case 5:
+            result = 31;
+            break;
+        case 6:
+            result = 63;
+            break;
+        case 7:
+            result = 127;
+            break;
+        case 8:
+            result = 255;
+            break;
+        case 9:
+            result = 256;
+            break;
  
       default :
          result = 0;
@@ -78,18 +87,18 @@ int main() {
     int numElements = 0;
     cin >> numElements;
 
-    int elements[numElements];
+    string elements[numElements];
 
     for(int i = 0; i < numElements; i++) {
         cin >> elements[i];
     }
+    reverse(elements, elements + numElements);
     
-    int groupToBinary = numElements;
-    
-    
-    for(int i = 0; i < groupToBinary; i++) {
-        cout << decToBinary(i) << ": " << endl;
-     
+    int groupToBinary = returnLoopsRequired(numElements);
+
+    for(int i = 0; i <= groupToBinary; i++) {
+        cout << decToBinary(i) << ":";
+        cout << "Answer Here" << endl;
 
     }//End of for loop
         
