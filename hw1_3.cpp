@@ -11,19 +11,60 @@
 
 #include <iostream>
 #include <algorithm>
+#include <cmath>
+#include <string>
+
 
 using namespace std;
+
+// function to convert decimal to binary 
+string decToBinary(int n) 
+{ 
+    // array to store binary number 
+    int binaryNum[32];
+    string results;
+  
+    // counter for binary array 
+    int i = 0; 
+    while (n > 0) { 
+  
+        // storing remainder in binary array 
+        binaryNum[i] = n % 2; 
+        n = n / 2; 
+        i++; 
+    } 
+  
+    // printing binary array in reverse order 
+    for (int j = i - 1; j >= 0; j--) 
+        // cout << binaryNum[j];
+        results = results + to_string(binaryNum[j]);
+        return results;
+} 
+
 int main() {
-
-
+    
     int numElements = 0;
     cin >> numElements;
 
-    string elements[numElements];
+    int elements[numElements];
 
     for(int i = 0; i < numElements; i++) {
         cin >> elements[i];
     }
+    
+    for(int i = 0; i < numElements; i++) {
+        cout << i << " To Binary is "<< decToBinary(i) << endl;
+     
+
+    }//End of for loop
+        
+        
+
+   
+    
 
 return 0;
+
+
 }
+
