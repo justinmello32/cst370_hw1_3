@@ -39,7 +39,39 @@ string decToBinary(int n)
         // cout << binaryNum[j];
         results = results + to_string(binaryNum[j]);
         return results;
-} 
+}
+
+int returnLoopsRequired(int n) {
+    int result;
+    
+    switch(n) {
+      case 1 :
+         result = 1;
+         break;
+      case 2 :
+         result = 3;
+         break;
+      case 3 :
+         result = 7;
+         break;
+      case 4:
+         result = 15;
+        break;
+      case 5:
+        result = 31;
+      case 6:
+        result = 63;
+      case 7:
+        result = 127;
+      case 8:
+        result = 255;
+ 
+      default :
+         result = 0;
+   }
+    
+    return result;
+}
 
 int main() {
     
@@ -52,8 +84,11 @@ int main() {
         cin >> elements[i];
     }
     
-    for(int i = 0; i < numElements; i++) {
-        cout << i << " To Binary is "<< decToBinary(i) << endl;
+    int groupToBinary = numElements;
+    
+    
+    for(int i = 0; i < groupToBinary; i++) {
+        cout << decToBinary(i) << ": " << endl;
      
 
     }//End of for loop
