@@ -12,33 +12,10 @@
 #include <iostream>
 #include <algorithm>
 #include <string>
+#include <vector>
 
 
 using namespace std;
-
-// function to convert decimal to binary 
-string decToBinary(int n) 
-{ 
-    // array to store binary number 
-    int binaryNum[32];
-    string results = "0";
-  
-    // counter for binary array 
-    int i = 0; 
-    while (n > 0) { 
-  
-        // storing remainder in binary array 
-        binaryNum[i] = n % 2; 
-        n = n / 2; 
-        i++; 
-    } 
-  
-    // printing binary array in reverse order 
-    for (int j = i - 1; j >= 0; j--) 
-        // cout << binaryNum[j];
-        results = results + to_string(binaryNum[j]);
-        return results;
-}
 
 int returnLoopsRequired(int n) {
     int result;
@@ -97,10 +74,32 @@ int main() {
     int groupToBinary = returnLoopsRequired(numElements);
 
     for(int i = 0; i <= groupToBinary; i++) {
-        cout << decToBinary(i) << ":";
-        cout << "Answer Here" << endl;
 
-    }//End of for loop
+        // array to store binary number
+        int binaryNum[32];
+        vector<string> resultSet;
+        int n = i;
+        // counter for binary array
+        int k = 0;
+        while (n > 0) {
+            // storing remainder in binary array
+            binaryNum[k] = n % 2;
+            if(binaryNum[k] == 1) {
+                resultSet.push_back(elements[k]);
+            }
+            n = n / 2;
+            k++;
+        }
+
+        // printing binary array in reverse order
+        for (int j = k - 1; j >= 0; j--) {
+            cout << binaryNum[j];
+        }
+        for (int j = k - 1; j >= 0; j--) {
+            cout << resultSet[j];
+        }
+
+}//End of for loop
         
         
 
