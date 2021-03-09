@@ -91,15 +91,26 @@ int main() {
             k++;
         }
 
-        // printing binary array in reverse order
-        for (int j = k - 1; j >= 0; j--) {
-            cout << binaryNum[j];
+        if(k > 0) {
+            // printing binary array in reverse order
+            for (int j = k - 1; j >= 0; j--) {
+                cout << binaryNum[j];
+            }
+            cout << ":";
         }
-        cout << ":";
-        for (int j = k - 1; j >= 0; j--) {
-            cout << resultSet[j];
+        else{
+            cout << "0:EMPTY";
         }
-        cout << "" << endl;
+
+//        for (int j = k - 1; j >= 0; j--) {
+//            cout << resultSet[j] << " ";
+//        }
+
+        reverse(resultSet.begin(),resultSet.end());
+        for(int q = 0; q < resultSet.size(); q++){
+            cout << resultSet[q] << " ";
+        }
+        cout << endl;
 
 }//End of for loop
         
