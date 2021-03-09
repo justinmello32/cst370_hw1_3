@@ -95,9 +95,11 @@ int main() {
         for (int j = k - 1; j >= 0; j--) {
             cout << binaryNum[j];
         }
+        cout << ":";
         for (int j = k - 1; j >= 0; j--) {
             cout << resultSet[j];
         }
+        cout << "" << endl;
 
 }//End of for loop
         
