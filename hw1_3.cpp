@@ -13,6 +13,7 @@
 #include <algorithm>
 #include <string>
 #include <vector>
+#include <array>
 
 
 using namespace std;
@@ -92,6 +93,8 @@ int main() {
         }
 
         if(k > 0) {
+            //Print extra zero is needed
+
             // printing binary array in reverse order
             for (int j = k - 1; j >= 0; j--) {
                 cout << binaryNum[j];
@@ -99,12 +102,16 @@ int main() {
             cout << ":";
         }
         else{
-            cout << "0:EMPTY";
+            if(numElements == 0) {
+                cout << "0:Empty" << endl;
+            }
+            else {
+                for (int i = 0; i < numElements; i++) {
+                    cout << "0";
+                }
+                cout << ":Empty";
+            }
         }
-
-//        for (int j = k - 1; j >= 0; j--) {
-//            cout << resultSet[j] << " ";
-//        }
 
         reverse(resultSet.begin(),resultSet.end());
         for(int q = 0; q < resultSet.size(); q++){
