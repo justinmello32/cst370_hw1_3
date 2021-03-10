@@ -94,14 +94,11 @@ int main() {
 
         if(k > 0) {
             //Print extra zero is needed
-
+            int difference = numElements - k;
+            for(int a =0; a < difference; a++)
+                cout << "0";
             // printing binary array in reverse order
             for (int j = k - 1; j >= 0; j--) {
-                int counter = k;
-                while(counter < numElements) {
-                    cout << "0";
-                    counter++;
-                }
                 cout << binaryNum[j];
             }
             cout << ":";
