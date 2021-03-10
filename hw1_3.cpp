@@ -105,13 +105,13 @@ int main() {
         }
         else{
             if(numElements == 0) {
-                cout << "0:Empty" << endl;
+                cout << "0:EMPTY" << endl;
             }
             else {
                 for (int i = 0; i < numElements; i++) {
                     cout << "0";
                 }
-                cout << ":Empty";
+                cout << ":EMPTY";
             }
         }
 
