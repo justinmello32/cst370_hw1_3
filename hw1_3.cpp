@@ -97,6 +97,11 @@ int main() {
 
             // printing binary array in reverse order
             for (int j = k - 1; j >= 0; j--) {
+                int counter = k;
+                while(counter < numElements) {
+                    cout << "0";
+                    counter++;
+                }
                 cout << binaryNum[j];
             }
             cout << ":";
